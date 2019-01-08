@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/top_bar_layout" />
+
+    <com.t.cloudmusic.widget.EditTextWithDelete
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/line_shape_bottom_line"
+        android:gravity="center_vertical"
+        android:drawableLeft="@mipmap/aoe"/>
+
+    <com.t.cloudmusic.widget.EditTextWithDelete
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/line_shape_bottom_line"
+        android:gravity="center_vertical"
+        android:drawableLeft="@mipmap/aog"/>
+
+
+</LinearLayout>
