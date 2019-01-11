@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/top_bar_layout" />
+
+    <com.t.cloudmusic.widget.EditTextWithDelete
+        android:id="@+id/mobileNum"
+        style="@style/inputLabel"
+        android:layout_marginTop="30dp"
+        android:drawableLeft="@mipmap/aoe"
+        android:hint="@string/inputHint_phone"
+        android:inputType="phone" />
+
+    <com.t.cloudmusic.widget.EditTextWithDelete
+        android:id="@+id/password"
+        style="@style/inputLabel"
+        android:layout_marginTop="5dp"
+        android:drawableLeft="@mipmap/aog"
+        android:hint="@string/inputHint_pass"
+        android:inputType="textPassword" />
+
+
+    <com.t.cloudmusic.widget.LoginButton
+        android:id="@+id/registerButton"
+        style="@style/submitButton"
+        android:layout_marginTop="15dp"
+        android:text="@string/register_button" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/visitor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/register"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:autoLink="all"
+        android:onClick="onClick"
+        android:text="@string/resetPass" />
+</LinearLayout>

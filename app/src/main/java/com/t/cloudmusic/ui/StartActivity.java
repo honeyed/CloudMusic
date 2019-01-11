@@ -4,21 +4,21 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.annotation.Nullable;
-import android.view.Window;
-import android.view.WindowManager;
 
 import com.t.cloudmusic.R;
-import com.t.cloudmusic.base.BaseActivity;
+import com.t.cloudmusic.base.BActivity;
 import com.t.cloudmusic.common.SPUtils;
+import com.t.cloudmusic.common.SP_Constant;
 import com.t.cloudmusic.ui.main.MainActivity;
 
-public class StartActivity  extends BaseActivity {
+public class StartActivity  extends BActivity {
 
     private CountDownTimer countDownTimer;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        SPUtils.getInstance().putBoolean(SP_Constant.IS_LOGIN, false);
         //无title
 //        requestWindowFeature(Window.FEATURE_NO_TITLE);
         //全屏
@@ -49,7 +49,7 @@ public class StartActivity  extends BaseActivity {
     }
 
     @Override
-    public void setPresenter(Object presenter) {
-
+    public Object newP() {
+        return null;
     }
 }

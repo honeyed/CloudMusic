@@ -7,16 +7,14 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 import android.view.Window;
-import android.view.WindowManager;
 
 import com.t.cloudmusic.R;
-import com.t.cloudmusic.base.BaseActivity;
-import com.t.cloudmusic.base.BasePresenter;
+import com.t.cloudmusic.base.BActivity;
+import com.t.cloudmusic.ui.main.MainActivity;
 
-public class LoginActivity extends BaseActivity<LoginContract.Presenter> implements View.OnClickListener {
+public class LoginActivity extends BActivity implements View.OnClickListener {
 
-    private LoginContract.Presenter presenter;
-
+//    private LoginPresenter presenter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -41,14 +39,8 @@ public class LoginActivity extends BaseActivity<LoginContract.Presenter> impleme
             e.printStackTrace();
         }
         setContentView(R.layout.activity_login);
-        presenter = new LoginPresenter(this);
-        setPresenter(presenter);
-
-    }
-
-    @Override
-    public void setPresenter(LoginContract.Presenter presenter) {
-
+//        presenter = new LoginPresenter();
+//        presenter.attachV(this);
     }
 
     @Override
@@ -58,10 +50,17 @@ public class LoginActivity extends BaseActivity<LoginContract.Presenter> impleme
                 startActivity(new Intent(LoginActivity.this, LoginByMobilActivity.class));
                 break;
             case R.id.register:
+                startActivity(new Intent(LoginActivity.this, RegisterByMobilActivity.class));
                 break;
             case R.id.visitor:
+                startActivity(new Intent(LoginActivity.this, MainActivity.class));
                 break;
 
         }
+    }
+
+    @Override
+    public Object newP() {
+        return null;
     }
 }

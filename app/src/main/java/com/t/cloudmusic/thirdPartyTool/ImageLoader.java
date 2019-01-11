@@ -1,6 +1,7 @@
 package com.t.cloudmusic.thirdPartyTool;
 
 import android.content.Context;
+import android.support.design.widget.TabLayout;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
@@ -18,4 +19,7 @@ public class ImageLoader {
                 .load(url)
                 .into(imageView);
     }
+//    int dpToPx(int dps) {
+//        return Math.round(getResources().getDisplayMetrics().density * dps);
+//    }
 }

@@ -1,27 +1,26 @@
 package com.t.cloudmusic.ui.login;
 
-import com.t.cloudmusic.base.BasePresenter;
-import com.t.cloudmusic.base.BaseView;
-import com.t.cloudmusic.ui.main.MainContract;
+import com.t.cloudmusic.base.IPresenter;
+import com.t.cloudmusic.base.IView;
 
 public interface LoginContract {
 
-    interface Presenter extends BasePresenter {
-
+    interface LoginPresenter extends IPresenter {
+        void doLogin(String name,String pass);
     }
 
-    interface LoginView extends BaseView<MainContract.Presenter> {
+    interface LoginView extends IView<LoginPresenter> {
 
         void loginSuccess();
 
         void loginFailed(int state, String message);
     }
 
-    interface RegisterView extends BaseView<MainContract.Presenter> {
-
+    interface RegisterView extends IView<LoginContract.LoginPresenter> {
+        void doLogin(String userName, String passWord);
     }
 
-    interface GetVerificationCode extends BaseView<MainContract.Presenter> {
+    interface GetVerificationCode extends IView<LoginContract.LoginPresenter> {
         void success(String verificationCode);
     }
 }
