@@ -1,14 +1,14 @@
 package com.t.cloudmusic.ui.main;
 
-import com.t.cloudmusic.base.BasePresenter;
-import com.t.cloudmusic.base.BaseView;
+import com.t.cloudmusic.base.IPresenter;
+import com.t.cloudmusic.base.IView;
 
 /**
  * This specifies the contract between the view and the presenter.
  */
 public interface MainContract {
 
-    interface View extends BaseView<Presenter> {
+    interface View extends IView<Presenter> {
 
         void setProgressIndicator(boolean active);
 
@@ -19,7 +19,11 @@ public interface MainContract {
         boolean isActive();
     }
 
-    interface Presenter extends BasePresenter {
+    interface DiscoverView extends IView<Presenter> {
+        
+    }
+
+    interface Presenter extends IPresenter {
 
     }
 }

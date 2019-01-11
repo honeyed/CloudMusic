@@ -7,6 +7,7 @@
     <include layout="@layout/top_bar_layout" />
 
     <com.t.cloudmusic.widget.EditTextWithDelete
+        android:id="@+id/mobileNum"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginLeft="15dp"
@@ -14,17 +15,44 @@
         android:layout_marginTop="30dp"
         android:background="@drawable/line_shape_bottom_line"
         android:gravity="center_vertical"
+        android:inputType="phone"
         android:drawableLeft="@mipmap/aoe"/>
 
     <com.t.cloudmusic.widget.EditTextWithDelete
+        android:id="@+id/password"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:layout_marginTop="5dp"
+        android:inputType="textPassword"
         android:background="@drawable/line_shape_bottom_line"
         android:gravity="center_vertical"
         android:drawableLeft="@mipmap/aog"/>
 
 
+    <com.t.cloudmusic.widget.LoginButton
+        android:id="@+id/loginButton"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/login_button_color_press"
+        android:text="@string/login"
+        android:onClick="onClick"
+        android:textColor="@android:color/white"
+        android:textSize="16sp" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/visitor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/register"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:onClick="onClick"
+        android:autoLink="all"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/resetPass" />
 </LinearLayout>

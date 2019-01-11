@@ -8,6 +8,7 @@ import android.os.Message;
 import android.util.Log;
 
 import com.t.cloudmusic.common.SPUtils;
+import com.t.cloudmusic.common.SP_Constant;
 import com.t.cloudmusic.ui.login.LoginActivity;
 
 import java.lang.reflect.Field;
@@ -165,12 +166,14 @@ public class HookLoginUtil {
                         // 应该要for循环；感觉还不如自己写个自定义方法
                         String activityName = realIntent.getComponent().getClassName();
                         Log.e("realIntent.getComponent()=",realIntent.getComponent().getClassName());
-                        if (SPUtils.getInstance().getBoolean("login", false) || !new NeedLoginActivity().isNeedLogin(activityName)) {//是否登录
+                        if (SPUtils.getInstance().getBoolean(SP_Constant.IS_LOGIN, false) || !new NeedLoginActivity().isNeedLogin(activityName)) {//是否登录
                             proxyIntent.setComponent(realIntent.getComponent());
                         } else {//跳转登录界面
                             ComponentName componentName = new ComponentName(context, LoginActivity.class);
                             proxyIntent.putExtra("extraIntent", realIntent.getComponent()
                                     .getClassName());
+                            proxyIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);//关掉所要到的界面中间的activity
+                            proxyIntent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);//设置不要刷新将要跳转的界面
                             proxyIntent.setComponent(componentName);
                         }
                     }

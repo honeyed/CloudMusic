@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android" android:oneshot="false">
+    <item android:drawable="@drawable/select_playing_drawable" android:duration="100" />
+    <item android:drawable="@drawable/select_playing_drawable2" android:duration="100" />
+    <item android:drawable="@drawable/select_playing_drawable3" android:duration="100" />
+    <item android:drawable="@drawable/select_playing_drawable4" android:duration="100" />
+    <item android:drawable="@drawable/select_playing_drawable5" android:duration="100" />
+    <item android:drawable="@drawable/select_playing_drawable6" android:duration="100" />
+</animation-list>

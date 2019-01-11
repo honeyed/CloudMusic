@@ -1,23 +1,12 @@
 package com.t.cloudmusic.ui.login;
 
-import com.t.cloudmusic.base.BaseView;
+import com.t.cloudmusic.base.BPresenter;
 
-import java.lang.ref.WeakReference;
-
-public class LoginPresenter implements LoginContract.Presenter {
-
-    private WeakReference baseView;
-
-    public LoginPresenter(BaseView baseView1) {
-        baseView = new WeakReference<BaseView>(baseView1);
-    }
-
-    public void doLogin(String username, String password) {
-
-    }
+public class LoginPresenter extends BPresenter implements LoginContract.LoginPresenter {
 
     @Override
-    public void start() {
-
+    public void doLogin(String username, String password) {
+        ((LoginContract.LoginView) getV()).loginSuccess();
     }
+
 }

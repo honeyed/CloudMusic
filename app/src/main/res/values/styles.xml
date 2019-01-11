@@ -27,4 +27,51 @@
         <item name="android:onClick">onClick</item>
     </style>
 
+    <!-- 登录注册的提交按钮样式 -->
+    <style name="submitButton" >
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginLeft">15dp</item>
+        <item name="android:layout_marginRight">15dp</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:background">@drawable/login_button_color_press</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:onClick">onClick</item>
+    </style>
+    <!-- 登录注册的输入框样式 -->
+    <style name="inputLabel" >
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginLeft">15dp</item>
+        <item name="android:layout_marginRight">15dp</item>
+        <item name="android:background">@drawable/line_shape_bottom_line</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <!-- 验证码输入框edit样式 -->
+    <style name="v_code_edit_text" >
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:cursorVisible">false</item>
+        <item name="android:inputType">number</item>
+        <item name="android:maxLength">1</item>
+        <item name="android:background">@drawable/line_shape_bottom_line</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <!-- 默认tabLayout样式 -->
+    <style name="XTabLayout_Default_Style" parent="Base.Widget.Design.TabLayout">
+        <item name="x_tabIndicatorColor">?attr/colorAccent</item>
+        <item name="x_tabIndicatorHeight">2dp</item>
+        <item name="x_tabPaddingStart">12dp</item>
+        <item name="x_tabPaddingEnd">12dp</item>
+        <item name="x_tabBackground">?attr/selectableItemBackground</item>
+        <item name="x_tabTextAppearance">@style/TextAppearance.Design.Tab</item>
+        <item name="x_tabSelectedTextColor">?android:textColorPrimary</item>
+        <item name="x_tabGravity">fill</item>
+        <item name="x_tabMode">fixed</item>
+    </style>
+
 </resources>
