@@ -2,6 +2,7 @@ package com.t.cloudmusic.ui.main;
 
 import com.t.cloudmusic.base.IPresenter;
 import com.t.cloudmusic.base.IView;
+import com.t.cloudmusic.data.main.RecommendBean;
 
 /**
  * This specifies the contract between the view and the presenter.
@@ -20,10 +21,11 @@ public interface MainContract {
     }
 
     interface DiscoverView extends IView<Presenter> {
-        
+
+        void onDataSuccess(RecommendBean recommendBean);
     }
 
     interface Presenter extends IPresenter {
-
+        void getRecommendDate();
     }
 }

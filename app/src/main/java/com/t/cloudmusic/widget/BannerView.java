@@ -29,7 +29,8 @@ import java.util.List;
 public class BannerView extends FrameLayout implements ViewPager.OnPageChangeListener {
 
     private ViewPager viewPager;
-    private List<String> urlList;
+//    private List<String> urlList;
+    private BannerDate bannerDate;
     private LinearLayout indicatorInside;
     private BannerPagerAdapter bannerPagerAdapter;
     private List<ImageView> imageViews;
@@ -63,19 +64,21 @@ public class BannerView extends FrameLayout implements ViewPager.OnPageChangeLis
     public void initView(Context context,  AttributeSet attrs) {
         View view = LayoutInflater.from(context).inflate(R.layout.widget_banner, this, true);
         viewPager = view.findViewById(R.id.viewPager);
+        viewPager.setPageMargin(60);
         indicatorInside = view.findViewById(R.id.indicatorInside);
     }
 
     public List<String> getUrlList() {
-        return urlList;
+        return bannerDate.getImageList();
     }
 
-    public void setUrlList(List<String> urlList) {
-        this.urlList = urlList;
+    public void setUrlList(BannerDate bannerDate) {
+        this.bannerDate = bannerDate;
+//        this.urlList = urlList;
         imageViews = new ArrayList<>();
-        count = urlList.size();
+        count = bannerDate.getImageList().size();
         indicatorImages = new ArrayList<>();
-        for(int i = 0; i < urlList.size(); i++) {
+        for(int i = 0; i < bannerDate.getImageList().size(); i++) {
             ImageView imageView = new AppCompatImageView(this.getContext());
             imageView.setScaleType(ImageView.ScaleType.FIT_XY);
             ImageView linearImageView = new AppCompatImageView(this.getContext());
@@ -87,7 +90,7 @@ public class BannerView extends FrameLayout implements ViewPager.OnPageChangeLis
             indicatorInside.addView(linearImageView);
             imageViews.add(imageView);
         }
-        bannerPagerAdapter = new BannerPagerAdapter(imageViews, urlList);
+        bannerPagerAdapter = new BannerPagerAdapter(imageViews, bannerDate.getImageList());
         viewPager.setAdapter(bannerPagerAdapter);
 
         viewPager.addOnPageChangeListener(this);
@@ -106,12 +109,12 @@ public class BannerView extends FrameLayout implements ViewPager.OnPageChangeLis
     }
 
     public String[] getUrlArray() {
-        return (String[]) urlList.toArray();
+        return (String[]) bannerDate.getImageList().toArray();
     }
 
-    public void setUrlList(String[] urlList) {
-        setUrlList(Arrays.asList(urlList));
-    }
+//    public void setUrlList(String[] urlList) {
+//        setUrlList(Arrays.asList(bannerDate.getImageList()));
+//    }
 
     public void start() {
         handler.postDelayed(task,delayTime);
@@ -146,11 +149,13 @@ public class BannerView extends FrameLayout implements ViewPager.OnPageChangeLis
                 currentItem++;
                 if (currentItem == count)
                     currentItem =0;
-
                 viewPager.setCurrentItem(currentItem);
                 handler.postDelayed(task, delayTime);
             }
         }
     };
 
+    public interface BannerDate {
+        List<String> getImageList();
+    }
 }

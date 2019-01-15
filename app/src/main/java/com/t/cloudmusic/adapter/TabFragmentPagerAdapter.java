@@ -35,5 +35,4 @@ public class TabFragmentPagerAdapter extends FragmentPagerAdapter {
 
 
 
-
 }

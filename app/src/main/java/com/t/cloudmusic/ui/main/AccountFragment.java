@@ -2,7 +2,7 @@ package com.t.cloudmusic.ui.main;
 
 import com.t.cloudmusic.base.BFragment;
 
-public class AccountFragment extends BFragment<MainContract.Presenter> implements MainContract.DiscoverView {
+public class AccountFragment extends BFragment<MainContract.Presenter> {
     @Override
     public boolean onBackPressed() {
         return false;
