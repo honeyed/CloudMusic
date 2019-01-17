@@ -2,7 +2,10 @@
 <resources>
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#c3473a</color>
+    <color name="colorAccent">#e35b4a</color>
+    <color name="colorAccentPress">#c3473a</color>
+    <color name="textColorPrimary">#323233</color>
+    <color name="textColor">#323233</color>
 
     <drawable name="clr_normal">#ff6501</drawable>
     <drawable name="clr_pressed">#a44100</drawable>

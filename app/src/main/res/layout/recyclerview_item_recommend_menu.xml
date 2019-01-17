@@ -4,17 +4,26 @@
     android:layout_height="wrap_content"
     android:gravity="center"
     android:orientation="vertical"
-    android:paddingTop="10dp" >
+    android:paddingTop="10dp">
 
     <com.t.cloudmusic.widget.MenuButton
         android:id="@+id/image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/select_munu_drawable" />
+        android:background="@drawable/select_menu_drawable"
+        android:clickable="true"
+        android:focusable="true" />
 
     <android.support.v7.widget.AppCompatTextView
         android:id="@+id/text"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:textSize="12sp"/>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:background="#e2e3e4" />
 </LinearLayout>

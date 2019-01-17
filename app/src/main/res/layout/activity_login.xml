@@ -53,6 +53,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"
+        android:baselineAligned="false"
         android:orientation="horizontal">
 
         <LinearLayout
@@ -72,7 +73,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="微信" />
+                android:text="@string/weChat" />
         </LinearLayout>
 
         <LinearLayout
@@ -92,7 +93,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="QQ" />
+                android:text="@string/QQ" />
         </LinearLayout>
 
         <LinearLayout
@@ -112,7 +113,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="微博" />
+                android:text="@string/weiBo" />
         </LinearLayout>
 
         <LinearLayout
@@ -132,7 +133,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="网易邮箱" />
+                android:text="@string/E_MAIL" />
         </LinearLayout>
 
     </LinearLayout>
@@ -152,10 +153,9 @@
         <android.support.v7.widget.AppCompatTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
-            android:text="其他登录方式" />
+            android:text="@string/otherLogin" />
 
         <View
             android:layout_width="70dp"

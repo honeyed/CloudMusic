@@ -5,44 +5,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorAccent"
-        android:orientation="horizontal">
-
-        <android.support.v7.widget.AppCompatImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@null"
-            android:padding="10dp"
-            android:src="@drawable/selector_microphone_" />
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="30dp"
-            android:layout_gravity="center_vertical"
-            android:layout_weight="1"
-            android:background="@drawable/search_text_recom"
-            android:gravity="center">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:drawableLeft="@mipmap/cm2_topbar_icn_search_night"
-                android:gravity="center"
-                android:text="  父亲写的散文诗-许飞"
-                android:textColor="#32fafafa" />
-        </LinearLayout>
-
-        <android.support.v7.widget.AppCompatImageView
-            android:id="@+id/isPlaying"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:src="@drawable/anim_playing_drawable" />
-
-    </LinearLayout>
 
     <com.t.cloudmusic.widget.tabLayout.XTabLayout
         android:id="@+id/tabLayout"

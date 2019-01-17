@@ -1,25 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.main.MainActivity" >
+    android:orientation="vertical"
+    tools:context=".ui.main.MainActivity">
 
-    <fragment
-        android:id="@+id/tabs_fragment"
-        android:name="com.t.cloudmusic.ui.main.MainTabsFragment"
+    <LinearLayout
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_alignParentBottom="true"
-        tools:layout="@layout/fragment_main_toolbar_subview" />
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:orientation="horizontal">
+
+        <android.support.v7.widget.AppCompatImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:padding="10dp"
+            android:src="@drawable/selector_microphone_" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:background="@drawable/search_text_recom"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/cm2_topbar_icn_search_night"
+                android:gravity="center"
+                android:text="  父亲写的散文诗-许飞"
+                android:textColor="#32fafafa" />
+        </LinearLayout>
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/isPlaying"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:src="@drawable/anim_playing_drawable" />
+
+    </LinearLayout>
 
     <FrameLayout
         android:id="@+id/fragment_container"
         android:layout_width="fill_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/tabs_fragment"
         android:layout_alignParentTop="true"
-        android:background="#fff"/>
-
-</RelativeLayout>
+        android:background="#fff" />
+    <fragment
+        android:id="@+id/tabs_fragment"
+        android:name="com.t.cloudmusic.ui.main.MainTabsFragment"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        tools:layout="@layout/fragment_main_toolbar_subview" />
+</LinearLayout>

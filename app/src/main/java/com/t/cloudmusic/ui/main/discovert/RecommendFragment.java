@@ -63,6 +63,7 @@ public class RecommendFragment extends BFragment<MainContract.Presenter> impleme
     @Override
     public void onDataSuccess(RecommendBean recommendBean) {
         recommendAdapter = new RecommendAdapter(recommendBean);
+        recyclerView.addItemDecoration(new RecommendAdapter.ChatDetailItemDecoration(15));
         recyclerView.setAdapter(recommendAdapter);
     }
 

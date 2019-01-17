@@ -7,10 +7,12 @@ import android.os.Message;
 import android.support.annotation.NonNull;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.AppCompatImageView;
+import android.support.v7.widget.LinearLayoutCompat;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -64,7 +66,7 @@ public class BannerView extends FrameLayout implements ViewPager.OnPageChangeLis
     public void initView(Context context,  AttributeSet attrs) {
         View view = LayoutInflater.from(context).inflate(R.layout.widget_banner, this, true);
         viewPager = view.findViewById(R.id.viewPager);
-        viewPager.setPageMargin(60);
+        viewPager.setPageMargin(getResources().getDimensionPixelSize(R.dimen.dp_10));
         indicatorInside = view.findViewById(R.id.indicatorInside);
     }
 
@@ -79,9 +81,12 @@ public class BannerView extends FrameLayout implements ViewPager.OnPageChangeLis
         count = bannerDate.getImageList().size();
         indicatorImages = new ArrayList<>();
         for(int i = 0; i < bannerDate.getImageList().size(); i++) {
-            ImageView imageView = new AppCompatImageView(this.getContext());
-            imageView.setScaleType(ImageView.ScaleType.FIT_XY);
+            ImageView imageView = new RoundedImageView(this.getContext());
+            imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
             ImageView linearImageView = new AppCompatImageView(this.getContext());
+            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(20,20);
+            layoutParams.setMargins(5,0,5,0);
+            linearImageView.setLayoutParams(layoutParams);
             if (i != 0)
                 linearImageView.setImageResource(mIndicatorUnselectedResId);
             else

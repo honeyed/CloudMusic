@@ -67,7 +67,7 @@ public class LoginByMobilActivity extends BActivity<LoginContract.LoginPresenter
     }
 
     @Override
-    public LoginPresenter newP() {
+    public LoginContract.LoginPresenter newP() {
         return new LoginPresenter();
     }
 }

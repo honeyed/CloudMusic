@@ -19,8 +19,7 @@ public class DiscoverFragment extends BFragment {
     private ViewPager viewPager;
     private XTabLayout mTabLayout;
     private TabFragmentPagerAdapter adapter;
-    private ImageView isPlaying;
-    private AnimationDrawable anim;
+
     @Override
     public boolean onBackPressed() {
         return false;
@@ -33,7 +32,7 @@ public class DiscoverFragment extends BFragment {
 
     @Override
     protected void bindView() {
-        isPlaying = (ImageView) findViewById(R.id.isPlaying);
+
         viewPager = (ViewPager) findViewById(R.id.viewPager);
         mTabLayout = (XTabLayout) findViewById(R.id.tabLayout);
         List<String> titles = new ArrayList<>();
@@ -45,21 +44,17 @@ public class DiscoverFragment extends BFragment {
         mTabLayout.setupWithViewPager(viewPager);
         adapter = new TabFragmentPagerAdapter(getFragmentManager(), fragmentList, titles);
         viewPager.setAdapter(adapter);
-        anim = (AnimationDrawable) isPlaying.getDrawable();
-
-
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        anim.start();
+
     }
 
     @Override
     public void onStop() {
         super.onStop();
-        anim.stop();
     }
 
     @Override

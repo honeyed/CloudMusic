@@ -14,4 +14,11 @@
     <string name="main_three">我的</string>
     <string name="main_four">朋友</string>
     <string name="main_five">账号</string>
+    <string name="txtDemo">你的手机号：+86 18888888888</string>
+    <string name="textTitle">会收到一条带有验证码的短信，请输入验证码</string>
+    <string name="weChat">微信</string>
+    <string name="weiBo">微博</string>
+    <string name="QQ">QQ</string>
+    <string name="E_MAIL">网易邮箱</string>
+    <string name="otherLogin">其他登录方式</string>
 </resources>
