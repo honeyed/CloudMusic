@@ -1,30 +1,25 @@
 package com.t.cloudmusic.data.main;
 
-import android.content.Context;
+import android.widget.Adapter;
 
+import com.t.cloudmusic.adapter.ItemType;
 import com.t.cloudmusic.adapter.RecommendAdapter;
+import com.t.cloudmusic.data.AdapterBean;
 import com.t.cloudmusic.widget.BannerView;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class RecommendBean {
+/**
+ * 首页发现，左侧fragment的bean
+ */
+public class RecommendBean extends AdapterBean {
 
     private Banner banners;
     private List<Menu> menus;
     private List<PSList> psLists;
     private List<LookLive> lookLives;
     private List<Member> members;
-
-    private List<RecommendAdapter.ItemType> objectList = new ArrayList<>();
-
-    public List<RecommendAdapter.ItemType> getObjectList() {
-        return objectList;
-    }
-
-    public void setObjectList(List<RecommendAdapter.ItemType> objectList) {
-        this.objectList = objectList;
-    }
 
     public Banner getBanners() {
         return banners;
@@ -66,7 +61,7 @@ public class RecommendBean {
         this.members = members;
     }
 
-    public static class Banner implements BannerView.BannerDate,RecommendAdapter.ItemType {
+    public static class Banner implements BannerView.BannerDate,ItemType {
         private List<String> imageUrls;
         private int type;
         private int itemType;
@@ -92,7 +87,7 @@ public class RecommendBean {
      * 菜单bean
      *
      */
-    public static class Menu implements RecommendAdapter.ItemType {
+    public static class Menu implements ItemType {
         private int resources;
         private String text;
 
@@ -122,7 +117,7 @@ public class RecommendBean {
      * 私人歌单
      *
      */
-    public static class PSList implements RecommendAdapter.ItemType {
+    public static class PSList implements ItemType {
         private String describe;
         private String image;
         private int listenerCount;
@@ -157,7 +152,7 @@ public class RecommendBean {
         }
     }
 
-    public static class Title implements RecommendAdapter.ItemType {
+    public static class Title implements ItemType {
         String title;
 
         public String getTitle() {
@@ -179,7 +174,7 @@ public class RecommendBean {
     * 直播bean
     *
     */
-    public static class LookLive implements RecommendAdapter.ItemType  {
+    public static class LookLive implements ItemType  {
         private String describe;
         private String image;
         private String name;
@@ -218,7 +213,7 @@ public class RecommendBean {
      * 会员专区bean
      *
      */
-    public static class Member implements RecommendAdapter.ItemType  {
+    public static class Member implements ItemType  {
 
         public void addUrl(String url) {
             if(imageUrl == null) {

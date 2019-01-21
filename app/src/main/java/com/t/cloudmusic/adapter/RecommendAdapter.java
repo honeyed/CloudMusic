@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.t.cloudmusic.R;
+import com.t.cloudmusic.data.AdapterBean;
 import com.t.cloudmusic.data.imageLoader.ImageLoader;
 import com.t.cloudmusic.data.main.RecommendBean;
 import com.t.cloudmusic.widget.BannerView;
@@ -30,8 +31,8 @@ public class RecommendAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
     public static final int TYPE_ITEM_TITLE = 7; //说明的标题
     private RecommendBean recommendBean;
 
-    public RecommendAdapter(RecommendBean recommendBean) {
-        this.recommendBean = recommendBean;
+    public RecommendAdapter(AdapterBean recommendBean) {
+        this.recommendBean = (RecommendBean) recommendBean;
     }
 
     @NonNull
@@ -90,13 +91,13 @@ public class RecommendAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
             RecommendBean.PSList psList = (RecommendBean.PSList) recommendBean.getObjectList().get(i);
             psHolder.count.setText(psList.getListenerCount() + "万");
             psHolder.describe.setText(psList.getDescribe());
-            ImageLoader.loadImage(psHolder.image.getContext(), psHolder.image, psList.getImage());
+            ImageLoader.loadRoundImage(psHolder.image.getContext(), psHolder.image, psList.getImage());
         } else if(viewHolder instanceof LookLivingHolder) {
             LookLivingHolder psHolder = (LookLivingHolder) viewHolder;
             RecommendBean.LookLive lookLive = (RecommendBean.LookLive) recommendBean.getObjectList().get(i);
             psHolder.name.setText(lookLive.getName());
             psHolder.describe.setText(lookLive.getDescribe());
-            ImageLoader.loadImage(psHolder.imageView.getContext(), psHolder.imageView, lookLive.getImage());
+            ImageLoader.loadRoundImage(psHolder.imageView.getContext(), psHolder.imageView, lookLive.getImage());
         } else if(viewHolder instanceof MemberHolder) {
             MemberHolder holder = (MemberHolder) viewHolder;
             RecommendBean.Member member = (RecommendBean.Member) recommendBean.getObjectList().get(i);
@@ -213,9 +214,7 @@ public class RecommendAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
         }
     }
 
-    public interface ItemType {
-        int getItemType();
-    }
+
 
     public static class ChatDetailItemDecoration extends RecyclerView.ItemDecoration {
         private int space;

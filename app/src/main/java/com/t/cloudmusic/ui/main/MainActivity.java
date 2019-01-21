@@ -21,6 +21,7 @@ public class MainActivity extends BActivity<MainContract.Presenter> implements M
         setContentView(R.layout.activity_main);
         isPlaying = findViewById(R.id.isPlaying);
         anim = (AnimationDrawable) isPlaying.getDrawable();
+
     }
 
     @Override

@@ -27,6 +27,11 @@ public class MenuButton extends RatioImageView {
     }
 
     @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        super.onMeasure(widthMeasureSpec, widthMeasureSpec);
+    }
+
+    @Override
     protected void onDraw(Canvas canvas) {
 //        Paint paint = new Paint();
 //        //抗锯齿，不然很丑

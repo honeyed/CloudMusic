@@ -1,8 +1,20 @@
 package com.t.cloudmusic.ui.main;
 
-import com.t.cloudmusic.base.BFragment;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 
-public class MusicFragment extends BFragment {
+import com.t.cloudmusic.R;
+import com.t.cloudmusic.adapter.MusicAdapter;
+import com.t.cloudmusic.base.BFragment;
+import com.t.cloudmusic.data.AdapterBean;
+import com.t.cloudmusic.data.main.MusicBean;
+
+public class MusicFragment extends BFragment<MainContract.Presenter> implements MainContract.MusicView {
+
+    private RecyclerView recyclerView;
+    private MusicAdapter musicAdapter;
+
     @Override
     public boolean onBackPressed() {
         return false;
@@ -10,12 +22,13 @@ public class MusicFragment extends BFragment {
 
     @Override
     protected int getLayoutId() {
-        return 0;
+        return R.layout.fragment_main_music;
     }
 
     @Override
     protected void bindView() {
-
+        recyclerView = findViewById(R.id.recyclerView);
+        getP().getMusicDate();
     }
 
     @Override
@@ -24,7 +37,15 @@ public class MusicFragment extends BFragment {
     }
 
     @Override
-    public Object newP() {
-        return null;
+    public MainContract.Presenter newP() {
+        return new MainPresenter();
+    }
+
+    @Override
+    public void onDataSuccess(AdapterBean musicBean) {
+        musicAdapter = new MusicAdapter(musicBean);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView.addItemDecoration(new MusicAdapter.MusicItemDecoration());
+        recyclerView.setAdapter(musicAdapter);
     }
 }

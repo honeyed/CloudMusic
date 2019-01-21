@@ -35,7 +35,7 @@ public class VipPagerAdapter extends PagerAdapter {
     public Object instantiateItem(ViewGroup container, final int position) {
 //        int realPosition = position % imageViews.size();
         ImageView view = imageViews.get(position);
-        ImageLoader.loadImage(view.getContext(), view, urlList.get(position));
+        ImageLoader.loadRoundImage(view.getContext(), view, urlList.get(position));
 //        ViewGroup viewGroup = (ViewGroup) imageViews.get(realPosition).getParent();
 //        if(viewGroup != null)
 //            viewGroup.removeView(imageViews.get(realPosition));

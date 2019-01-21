@@ -2,6 +2,8 @@ package com.t.cloudmusic.ui.main;
 
 import com.t.cloudmusic.base.IPresenter;
 import com.t.cloudmusic.base.IView;
+import com.t.cloudmusic.data.AdapterBean;
+import com.t.cloudmusic.data.main.MusicBean;
 import com.t.cloudmusic.data.main.RecommendBean;
 
 /**
@@ -22,10 +24,17 @@ public interface MainContract {
 
     interface DiscoverView extends IView<Presenter> {
 
-        void onDataSuccess(RecommendBean recommendBean);
+        void onDataSuccess(AdapterBean recommendBean);
+    }
+
+    interface MusicView extends IView<Presenter> {
+        void onDataSuccess(AdapterBean musicBean);
     }
 
     interface Presenter extends IPresenter {
+
         void getRecommendDate();
+
+        void getMusicDate();
     }
 }

@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView;
 import com.t.cloudmusic.R;
 import com.t.cloudmusic.adapter.RecommendAdapter;
 import com.t.cloudmusic.base.BFragment;
+import com.t.cloudmusic.data.AdapterBean;
 import com.t.cloudmusic.data.main.RecommendBean;
 import com.t.cloudmusic.ui.main.MainContract;
 import com.t.cloudmusic.ui.main.MainPresenter;
@@ -60,8 +61,9 @@ public class RecommendFragment extends BFragment<MainContract.Presenter> impleme
 //        bannerView.stop();
     }
 
+
     @Override
-    public void onDataSuccess(RecommendBean recommendBean) {
+    public void onDataSuccess(AdapterBean recommendBean) {
         recommendAdapter = new RecommendAdapter(recommendBean);
         recyclerView.addItemDecoration(new RecommendAdapter.ChatDetailItemDecoration(15));
         recyclerView.setAdapter(recommendAdapter);

@@ -81,8 +81,8 @@ public class BannerView extends FrameLayout implements ViewPager.OnPageChangeLis
         count = bannerDate.getImageList().size();
         indicatorImages = new ArrayList<>();
         for(int i = 0; i < bannerDate.getImageList().size(); i++) {
-            ImageView imageView = new RoundedImageView(this.getContext());
-            imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+            ImageView imageView = new AppCompatImageView(this.getContext());
+            imageView.setScaleType(ImageView.ScaleType.FIT_XY);
             ImageView linearImageView = new AppCompatImageView(this.getContext());
             LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(20,20);
             layoutParams.setMargins(5,0,5,0);

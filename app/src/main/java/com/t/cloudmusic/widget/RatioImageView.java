@@ -9,6 +9,7 @@ import com.t.cloudmusic.R;
 
 public class RatioImageView extends AppCompatImageView {
 
+    //宽高比例ImageView
     private final float ratio;
 
     public RatioImageView(Context context) {

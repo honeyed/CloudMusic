@@ -2,6 +2,7 @@ package com.t.cloudmusic.ui.main;
 
 import com.t.cloudmusic.R;
 import com.t.cloudmusic.base.BPresenter;
+import com.t.cloudmusic.data.main.MusicBean;
 import com.t.cloudmusic.data.main.RecommendBean;
 
 import java.util.ArrayList;
@@ -78,5 +79,38 @@ public class MainPresenter extends BPresenter implements MainContract.Presenter 
 
         MainContract.DiscoverView discoverView = (MainContract.DiscoverView) getV();
         discoverView.onDataSuccess(recommendBean);
+    }
+
+    @Override
+    public void getMusicDate() {
+        MusicBean bean = new MusicBean();
+
+        MusicBean.TitleBean bean1 = new MusicBean.TitleBean();
+        bean.addItemTypeBean(bean1);
+
+        MusicBean.Column column = new MusicBean.Column(R.mipmap.cm4_my_icn_music,"本地音乐","0");
+        bean.addItemTypeBean(column);
+        MusicBean.Column column1 = new MusicBean.Column(R.mipmap.cm4_my_icn_recent,"最近播放","43");
+        bean.addItemTypeBean(column1);
+        MusicBean.Column column2 = new MusicBean.Column(R.mipmap.cm4_my_icn_radio,"我的电台","0");
+        bean.addItemTypeBean(column2);
+        MusicBean.Column column3 = new MusicBean.Column(R.mipmap.cm4_my_icn_fav,"我的收藏","专辑/歌手/视频/专栏");
+        bean.addItemTypeBean(column3);
+        MusicBean.Column column4 = new MusicBean.Column(R.mipmap.cm5_my_icn_sati,"Sati 空间","特别的聆听模式");
+        bean.addItemTypeBean(column4);
+
+        MusicBean.SongList songList = new MusicBean.SongList();
+        bean.addItemTypeBean(songList);
+        bean.addItemTypeBean(songList);
+        bean.addItemTypeBean(songList);
+        bean.addItemTypeBean(songList);
+        bean.addItemTypeBean(songList);
+        bean.addItemTypeBean(songList);
+        bean.addItemTypeBean(songList);
+        bean.addItemTypeBean(songList);
+        bean.addItemTypeBean(songList);
+
+        MainContract.MusicView discoverView = (MainContract.MusicView) getV();
+        discoverView.onDataSuccess(bean);
     }
 }
