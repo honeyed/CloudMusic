@@ -78,20 +78,7 @@ public class MusicAdapter extends RecyclerView.Adapter {
 
 //    @Override
 //    public void onAttachedToRecyclerView(RecyclerView recyclerView) {
-//        super.onAttachedToRecyclerView(recyclerView);
-//
-//        RecyclerView.LayoutManager manager = recyclerView.getLayoutManager();
-//        if (manager instanceof GridLayoutManager) {
-//            GridLayoutManager gridManager = ((GridLayoutManager) manager);
-//
-//            gridManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
-//                @Override
-//                public int getSpanSize(int position) {
-//                    int type = getItemViewType(position);
-//                    return 1;
-//                }
-//            });
-//        }
+//    }
 //    }
 
     class TitleHolder extends RecyclerView.ViewHolder {
